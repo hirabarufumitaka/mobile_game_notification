@@ -35,4 +35,4 @@ README〜ER図作成：1/29〆切
 本番リリース： 2/21〆切
 
 ### 画面遷移図
-https://xd.adobe.com/view/ec0e6fe0-58a2-40b3-99cc-75f966d67824-b95d/
+https://xd.adobe.com/view/cc54725b-0383-4b36-9d56-2b38d382a87a-9907/

@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      event: 'イベント'
     attributes:
       user:
         email: 'メールアドレス'
@@ -9,6 +10,14 @@ ja:
         password_confirmation: 'パスワード確認'
         role: '権限'
         id: 'ID'
+      event:
+        name: 'イベント名'
+        description: '詳細'
+        event_type: 'イベント種類'
+        started_at: '開始日時'
+        ended_at: '終了日時'
+        game_application: 'ゲーム名'
+        application_id: 'ゲーム名'
   attributes:
     id: 'ID'
     created_at: '作成日時'
@@ -19,3 +28,8 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    event:
+      event_type:
+        gacha: 'ガチャ'
+        collab: 'コラボ'
+        others: 'その他'

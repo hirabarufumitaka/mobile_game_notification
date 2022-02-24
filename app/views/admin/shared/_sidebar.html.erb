@@ -10,11 +10,8 @@
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <%#= image_tag current_user.avatar_url, class: 'img-circle elevation-2' %>
-      </div>
       <div class="info">
-        <a href="#" class="d-block"><%#= current_user.decorate.full_name %></a>
+        <a href="#" class="d-block"><%= current_user.email %></a>
       </div>
     </div>
 
@@ -22,10 +19,10 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <%= link_to '#', class: "nav-link" do %>
+          <%= link_to admin_events_path, class: "nav-link #{active_if('admin/events')}" do %>
             <i class="nav-icon far fa-file"></i>
             <p>
-              イベント
+              <%= t('admin.events.index.title') %>
             </p>
           <% end %>
         </li>

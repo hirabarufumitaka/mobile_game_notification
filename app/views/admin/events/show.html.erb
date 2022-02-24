@@ -1,0 +1,52 @@
+<% content_for(:title, @event.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <div class="text-right mb-3">
+        <%= link_to t('defaults.edit'), edit_admin_event_path(@event), class: 'btn btn-success' %>
+        <%= link_to t('defaults.delete'), admin_event_path(@event), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:id) %></th>
+          <td><%= @event.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:game_application) %></th>
+          <td><%= @event.game_application&.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:name) %></th>
+          <td><%= @event.name %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:event_type) %></th>
+          <td><%= @event.event_type_i18n %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:started_at) %></th>
+          <td><%= l @event.started_at, format: :long %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:ended_at) %></th>
+          <td><%= l @event.ended_at, format: :long %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:created_at) %></th>
+          <td><%= l @event.created_at, format: :long %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:updated_at) %></th>
+          <td><%= l @event.updated_at, format: :long %></td>
+        </tr>
+      </table>
+      <table class="table table-bordered bg-white">
+        <tr>
+          <th scope="row"><%= Event.human_attribute_name(:description) %></th>
+          <td><%= @event&.description %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

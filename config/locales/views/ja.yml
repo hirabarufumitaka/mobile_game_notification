@@ -9,6 +9,8 @@ ja:
     delete: '削除'
     unspecified: '指定なし'
     message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
@@ -33,3 +35,12 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
+    events:
+      index:
+        title: 'イベント'
+      new:
+        title: 'イベント作成'
+      edit:
+        title: 'イベント編集'
+      show:
+        title: 'イベント詳細'

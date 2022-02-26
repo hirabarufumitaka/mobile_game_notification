@@ -70,3 +70,6 @@ gem 'rails-i18n'
 gem 'enum_help'
 gem 'ransack'
 gem 'kaminari'
+
+#SQL 改善
+gem 'activerecord-import'

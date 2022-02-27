@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_140815) do
+ActiveRecord::Schema.define(version: 2022_02_27_003356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 2022_02_20_140815) do
     t.datetime "ended_at", default: "2000-01-01 01:00:00", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "scraping"
     t.index ["game_application_id"], name: "index_events_on_game_application_id"
+    t.index ["scraping"], name: "index_events_on_scraping", unique: true
   end
 
   create_table "game_applications", force: :cascade do |t|

@@ -71,5 +71,5 @@ gem 'enum_help'
 gem 'ransack'
 gem 'kaminari'
 
-#SQL 改善
+# SQL 改善
 gem 'activerecord-import'

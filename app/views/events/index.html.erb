@@ -1,0 +1,9 @@
+<div class="container mx-auto ">
+  <section class="mx-5 mb-10">
+    <%= render 'shared/search_form' %>
+    <%= render @events %>
+  </section>
+  <div class="flex justify-center">
+    <%= paginate @events%>
+  </div>
+</div>

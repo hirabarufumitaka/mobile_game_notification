@@ -1,0 +1,6 @@
+<%= search_form_for @q, class: 'flex justify-center' do |f| %>
+  <div class="my-10">
+      <%= f.search_field :name_or_description_cont, class: 'px-10 py-2 border rounded-lg', placeholder: 'イベント名・内容' %>
+      <%= f.submit  '検索する',class: 'text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2' %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="container mx-auto bg-white rounded-lg">
+  <section class="mx-5 mb-10 text-gray-600">
+    <div class="flex">
+      <div class= "event-detail">
+        <div class="h3 font-bold  text-4xl mt-10">
+          <%= @event.name %>
+        </div>
+        <div class="divide-y divide-gray-400 mt-10">
+          <div class="text-left py-2 h3 font-semibold">ゲーム名</div>
+          <div class="pl-20 py-2 text-4xl font-medium ">
+            <%= @event.game_application&.name %>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-400 mt-10">
+          <div class="text-left py-2 h3 font-semibold">期間</div>
+          <div class="pl-40 py-2 text-4xl font-medium ">
+            <%= l @event.started_at, format: :long %> ~
+            <%= l @event.ended_at, format: :long %>
+          </div>
+        </div>
+
+        <div class="divide-y divide-gray-400 mt-10">
+          <div class="text-left py-2 h3 font-semibold">詳細</div>
+          <div class="text-base py-2 font-semibold ">
+            <%= @event.description %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

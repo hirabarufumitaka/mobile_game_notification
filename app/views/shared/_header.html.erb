@@ -1,14 +1,16 @@
-<header class="text-gray-600 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+<nav class="fixed w-full text-white bg-blue-900 bg-opacity-80 py-3 px-4 md:px-16 md:flex md:items-center md:justify-between">
+  <div class="flex justify-between">
+    <%= link_to 'ソシャゲ情報', root_path, class: "flex title-font font-medium items-center m-4 md:mb-0 ml-3 text-xl hover:text-blue-300" %>
+    <div class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Search">
+        <path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z"/>
       </svg>
-      <span class="ml-3 text-xl">ソシャゲ情報</span>
-    </a>
-    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-gray-900">イベント検索</a>
-      <a class="mr-5 hover:text-gray-900">フィードバック</a>
-    </nav>
+      <%= link_to 'イベント検索', events_path, class: "mr-5 ml-2 hover:text-blue-300"%>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Envelope">
+        <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"/>
+        <path d="M2 8l7.501 6.001a4 4 0 0 0 4.998 0L22 8"/>
+      </svg>
+      <a class="ml-2 hover:text-blue-300">フィードバック</a>
+    </div>
   </div>
-</header>
+</nav>

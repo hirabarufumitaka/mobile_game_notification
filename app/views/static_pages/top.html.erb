@@ -1,13 +1,18 @@
-<section class="text-gray-600 body-font bg-gradient-to-tr from-sky-400 to-cyan-300">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-      <%= image_tag('logo.png', size: '500x500') %>
-    </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-center items-center text-center">
-      <h1 class="title-font sm:text-8xl text-3xl mb-4 font-bold text-gray-600">ソシャゲ情報</h1>
-      <div class="flex justify-center space-x-10">
-        <button class="inline-flex text-white font-semibold bg-blue-600 border-0 py-4 px-10 mt-8 focus:outline-none hover:bg-blue-700 rounded-full text-lg shadow-lg">ソシャゲイベントを探す</button>
-      </div>
+<div class="bg-main-img bg-cover h-screen">
+  <div class="w-full h-full px-5 py-24 bg-blue-800 bg-opacity-20">
+    <div class="container  mx-auto w-4/5 relative z-10 flex items-center py-16 my-24 md:my-32">
+        <div class="w-full flex flex-col items-center justify-between relative z-10">
+          <p class="flex flex-col items-center font-extrabold text-6xl text-center md:text-8xl text-white">
+            ソシャゲイベント情報
+          </p>
+          <p class="flex flex-col max-w-lg text-center items-center font-extrabold text-lg my-6 text-white">
+            ソシャゲイベントをまとめて簡単に
+          </p>
+          <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800">
+            <%= link_to 'ソシャゲイベントを探す', events_path, class: "relative px-5 py-3 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0" %>
+          </button>
+        </div>
     </div>
   </div>
-</section>
+</div>
+

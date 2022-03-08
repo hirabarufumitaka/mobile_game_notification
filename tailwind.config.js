@@ -7,7 +7,11 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'main-img': "url('/images/main_background.jpg')",
+      },
+    },
   },
   variants: {
     extend: {},

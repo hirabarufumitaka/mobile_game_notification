@@ -6,13 +6,13 @@
           <%= @event.name %>
         </div>
         <div class="divide-y divide-gray-400 mt-10">
-          <div class="text-left py-2 h3 font-semibold">ゲーム名</div>
+          <div class="text-left py-2 h3 text-3xl font-semibold">ゲーム名</div>
           <div class="pl-20 py-2 text-4xl font-medium ">
             <%= @event.game_application&.name %>
           </div>
         </div>
         <div class="divide-y divide-gray-400 mt-10">
-          <div class="text-left py-2 h3 font-semibold">期間</div>
+          <div class="text-left py-2 h3 text-3xl font-semibold">期間</div>
           <div class="pl-40 py-2 text-4xl font-medium ">
             <%= l @event.started_at, format: :long %> ~
             <%= l @event.ended_at, format: :long %>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="divide-y divide-gray-400 mt-10">
-          <div class="text-left py-2 h3 font-semibold">詳細</div>
+          <div class="text-left py-2 h3 text-3xl font-semibold">詳細</div>
           <div class="text-base py-2 font-semibold ">
             <%= @event.description %>
           </div>

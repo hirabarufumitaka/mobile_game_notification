@@ -29,6 +29,10 @@
           <td><%= l @game_application.updated_at, format: :long %></td>
         </tr>
       </table>
+      <p>
+        <strong>game_application_image:</strong>
+        <%= image_tag @game_application.game_application_image.url, size: '300x200' %>
+      </p>
     </div>
   </div>
 </div>

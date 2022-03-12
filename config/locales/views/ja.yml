@@ -35,6 +35,15 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
+    game_applications:
+      index:
+        title: 'アプリ'
+      new:
+        title: 'アプリ作成'
+      edit:
+        title: 'アプリ編集'
+      show:
+        title: 'アプリ詳細'
     events:
       index:
         title: 'イベント'

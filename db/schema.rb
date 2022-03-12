@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_27_003356) do
+ActiveRecord::Schema.define(version: 2022_03_12_163607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_003356) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "game_application_image"
     t.index ["game_genre_id"], name: "index_game_applications_on_game_genre_id"
     t.index ["name"], name: "index_game_applications_on_name", unique: true
   end

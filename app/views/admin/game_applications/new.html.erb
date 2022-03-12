@@ -13,6 +13,10 @@
           <%= f.label :game_genre_id %>
           <%= f.select :game_genre_id, GameGenre.pluck(:name, :id), {include_blank: 'アプリジャンル'}, class: 'form-control' %>
         </div>
+        <div class="field">
+          <%= f.label :game_application_image %>
+          <%= f.file_field :game_application_image, accept: 'image/*' %>
+        </div>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>

@@ -1,6 +1,4 @@
-
 class Admin::GameApplicationsController < Admin::BaseController
-
   before_action :set_game_application, only: %i[edit update show destroy]
 
   def index
@@ -47,6 +45,6 @@ class Admin::GameApplicationsController < Admin::BaseController
   end
 
   def game_application_params
-    params.require(:game_application).permit(:name, :game_genre_id)
+    params.require(:game_application).permit(:name, :game_genre_id, :game_application_image)
   end
 end

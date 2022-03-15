@@ -65,10 +65,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+# login
 gem 'sorcery'
+
+# internationalization
 gem 'rails-i18n'
+
+# enum i18n
 gem 'enum_help'
+
+# search
 gem 'ransack'
+
+# pagination
 gem 'kaminari'
 
 # SQL
@@ -76,3 +85,6 @@ gem 'activerecord-import'
 
 # image
 gem 'carrierwave'
+
+# SEO
+gem 'meta-tags'

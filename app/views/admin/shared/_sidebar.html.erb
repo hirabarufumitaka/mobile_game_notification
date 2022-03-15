@@ -19,6 +19,22 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
+          <%= link_to admin_game_genres_path, class: "nav-link #{active_if('admin/game_genres')}" do %>
+            <i class="nav-icon far fa-file"></i>
+            <p>
+              <%= t('admin.game_genres.index.title') %>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_game_applications_path, class: "nav-link #{active_if('admin/game_applications')}" do %>
+            <i class="nav-icon far fa-file"></i>
+            <p>
+              <%= t('admin.game_applications.index.title') %>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item">
           <%= link_to admin_events_path, class: "nav-link #{active_if('admin/events')}" do %>
             <i class="nav-icon far fa-file"></i>
             <p>

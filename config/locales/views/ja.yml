@@ -35,6 +35,15 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
+    game_genres:
+      index:
+        title: 'ジャンル'
+      new:
+        title: 'ジャンル作成'
+      edit:
+        title: 'ジャンル編集'
+      show:
+        title: 'ジャンル詳細'
     game_applications:
       index:
         title: 'アプリ'

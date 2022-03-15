@@ -1,0 +1,32 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mb-5 pt-2">
+  <h1><%= t('.title') %></h1>
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <%= link_to '新規作成', new_admin_game_genre_path, class: %w[btn btn-primary]%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"><%= GameGenre.human_attribute_name(:id) %></th>
+          <th scope="col"><%= GameGenre.human_attribute_name(:name) %></th>
+          <th scope="col"><%= GameGenre.human_attribute_name(:created_at) %></th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render @game_genres %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- ページネーション -->
+      <%= paginate @game_genres %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<% content_for(:title, @game_application.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with model: @game_application, url: admin_game_application_path(@game_application), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :game_genre_id %>
+          <%= f.select :game_genre_id, GameGenre.pluck(:name, :id), {include_blank: 'アプリジャンル'}, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :game_application_image %>
+          <%= f.file_field :game_application_image, accept: 'image/*' %>
+        </div>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

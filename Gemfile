@@ -71,5 +71,8 @@ gem 'enum_help'
 gem 'ransack'
 gem 'kaminari'
 
-# SQL 改善
+# SQL
 gem 'activerecord-import'
+
+# image
+gem 'carrierwave'

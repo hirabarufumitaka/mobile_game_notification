@@ -1,16 +1,21 @@
+
 <%= link_to event_path(event) do %>
-  <div class="event-card border rounded-lg my-2 shadow-lg bg-white hover:text-gray-400">
-    <div class="m-2 ">
-      <div class="ml-5 my-auto ">
-        <h2 class="font-semibold leading-7 text-sm md:text-2xl md:leading-relaxed">
+  <div class="event-card border rounded-lg my-2 shadow-lg bg-white w-full lg:max-w-full lg:flex">
+    <div class="h-48 lg:h-auto lg:w-56 flex-none bg-cover rounded-lg lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+        <%= image_tag event.game_application.game_application_image.url, class: 'object-cover h-full w-full' %>
+    </div>
+    <div class="p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-8">
+        <p class="text-sm text-gray-600 flex items-center">
+          <%= event.game_application&.name %>
+        </p>
+        <div class="text-gray-900 font-bold text-xl mb-2">
           <%= event.name %>
-        </h2>
-          <p class="mt-1 text-gray-500 text-sm">
-            <%= l event.started_at, format: :long %> ~
-          </p>
-          <p class="mt-1 text-gray-500 text-sm">
-            <%= l event.ended_at, format: :long %>
-          </p>
+        </div>
+        <p class="text-gray-700 text-base">
+          <%= l event.started_at, format: :long %> ~
+          <%= l event.ended_at, format: :long %>
+        </p>
       </div>
     </div>
   </div>

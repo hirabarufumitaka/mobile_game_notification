@@ -6,9 +6,10 @@
     </div>
     <div class="p-4 flex flex-col justify-between leading-normal">
       <div class="mb-8">
-        <p class="text-sm text-gray-600 flex items-center">
-          <%= event.game_application&.name %>
-        </p>
+        <div class="px-2">
+          <span class="inline-block text-sm font-semibold text-gray-600 "><%= event.game_application&.name %></span>
+          <span class="inline-block bg-gray-100 rounded-full mx-4 px-4 text-sm text-gray-600 mr-2 mb-2">#<%= event.event_type_i18n %></span>
+        </div>
         <div class="text-gray-900 font-bold text-xl mb-2">
           <%= event.name %>
         </div>

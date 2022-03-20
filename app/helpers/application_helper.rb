@@ -32,12 +32,6 @@ module ApplicationHelper
         type: 'website',
         url: request.original_url,
         image: image_url('logo.png')
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@barusrun',
-        title: 'ソシャゲイベントをまとめて簡単に検索',
-        image: image_url('logo.png')
       }
     }
   end

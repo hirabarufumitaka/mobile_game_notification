@@ -88,3 +88,6 @@ gem 'carrierwave'
 
 # SEO
 gem 'meta-tags'
+
+# 　environment variable
+gem 'dotenv-rails'

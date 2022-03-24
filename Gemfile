@@ -89,5 +89,8 @@ gem 'carrierwave'
 # SEO
 gem 'meta-tags'
 
-# 　environment variable
+# environment variable
 gem 'dotenv-rails'
+
+# aws
+gem 'fog-aws'

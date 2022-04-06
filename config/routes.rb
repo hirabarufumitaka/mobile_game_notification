@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get 'terms', to: 'static_pages#terms'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  post 'callback', to: 'line_bot#callback'
   resources :events, only: %i[index show]
 
   namespace :admin do

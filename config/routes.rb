@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'terms', to: 'static_pages#terms'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   post 'callback', to: 'line_bot#callback'
+  post "oauth/callback", to: "oauths#callback"
+  get "oauth/callback", to: "oauths#callback"
+  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
   resources :events, only: %i[index show]
 
   namespace :admin do

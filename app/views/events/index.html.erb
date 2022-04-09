@@ -1,6 +1,12 @@
 <% set_meta_tags title: 'ソシャゲイベント一覧' %>
 <div class="container mx-auto mt-32">
   <%= link_to 'Login with line', auth_at_provider_path(provider: :line) %>
+  <div class="flex justify-center p-2">
+    <div class="inline-flex items-center bg-white leading-none text-black rounded-md p-2 shadow text-teal text-sm">
+      <span class="inline-flex px-2">LINEでイベント通知を受け取る</span>
+      <a href="https://lin.ee/ciLZn0j"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" width="100"></a>
+    </div>
+  </div>
   <section class="mx-5 mb-10">
     <%= render 'shared/search_form' %>
     <%= render @events %>

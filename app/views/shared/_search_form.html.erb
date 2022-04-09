@@ -1,20 +1,28 @@
-<%= search_form_for @q, class: 'flex justify-center mb-10' do |f| %>
-  <div class="flex flex-wrap -mx-3 mb-2">
-    <div class="w-auto px-3 mb-6 md:mb-0">
-      <%= f.select :game_application_id_eq, GameApplication.pluck(:name, :id), {include_blank: 'アプリ名'}, class: 'px-10 py-2 border rounded-lg' %>
+<%= search_form_for @q, class: 'justify-center mb-10' do |f| %>
+  <section class="p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">絞り込み検索</h2>
+    <div>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-3">
+        <div>
+          <%= f.select :game_application_id_eq, GameApplication.pluck(:name, :id), {include_blank: 'アプリ名'}, class: 'block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring' %>
+        </div>
+        <div>
+          <%= f.select :event_type_eq, {"ガチャ": 0, "コラボ": 1, "その他": 2}, {include_blank: 'イベント種類'}, class: 'block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring' %>
+        </div>
+        <div>
+          <%= f.search_field :name_or_description_cont, class: 'block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring', placeholder: 'イベント名' %>
+        </div>
+        <div>
+          <p class="text-gray-700">開催期間</p>
+          <div class="block w-full px-4 py-2 text-gray-700 bg-white border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+            <%= f.date_field :started_at_gteq, class: 'px-10 py-2 border rounded-lg' %> 〜
+            <%= f.date_field :ended_at_lteq_end_of_day, class: 'px-10 py-2 border rounded-lg' %>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-end mt-6">
+        <%= f.submit  '検索する',class: 'px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600' %>
+      </div>
     </div>
-    <div class="w-auto px-3 mb-6 md:mb-0">
-      <%= f.select :event_type_eq, {"ガチャ": 0, "コラボ": 1, "その他": 2}, {include_blank: 'イベント種類'}, class: 'px-10 py-2 border rounded-lg' %>
-    </div>
-    <div class="w-auto px-3 mb-6 md:mb-0">
-      <%= f.search_field :name_or_description_cont, class: 'px-10 py-2 border rounded-lg', placeholder: 'イベント名・内容' %>
-    </div>
-    <div class="w-auto px-3 mb-6 md:mb-0">
-      <%= f.date_field :started_at_gteq, class: 'px-10 py-2 border rounded-lg' %> 〜
-      <%= f.date_field :ended_at_lteq_end_of_day, class: 'px-10 py-2 border rounded-lg' %>
-    </div>
-    <div class="w-auto px-3 mb-6 md:mb-0">
-      <%= f.submit  '検索する',class: 'text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2' %>
-    </div>
-  </div>
+  </section>
 <% end %>

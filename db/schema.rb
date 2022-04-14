@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_031458) do
+ActiveRecord::Schema.define(version: 2022_04_13_020536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2022_04_09_031458) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "scraping"
-    t.boolean "line_flag", default: false, null: false
     t.index ["game_application_id"], name: "index_events_on_game_application_id"
     t.index ["scraping"], name: "index_events_on_scraping", unique: true
   end
@@ -56,6 +55,16 @@ ActiveRecord::Schema.define(version: 2022_04_09_031458) do
     t.index ["name"], name: "index_game_genres_on_name", unique: true
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_notifications_on_event_id"
+    t.index ["user_id", "event_id"], name: "index_notifications_on_user_id_and_event_id", unique: true
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "crypted_password"
@@ -66,4 +75,6 @@ ActiveRecord::Schema.define(version: 2022_04_09_031458) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "notifications", "events"
+  add_foreign_key "notifications", "users"
 end

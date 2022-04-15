@@ -8,6 +8,10 @@ class EventsController < ApplicationController
 
   def show; end
 
+  def notifications
+    @notification_events = current_user.notification_events.order(created_at: :desc)
+  end
+
   private
 
   def set_event

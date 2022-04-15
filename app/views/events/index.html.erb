@@ -1,6 +1,7 @@
 <% set_meta_tags title: 'ソシャゲイベント一覧' %>
 <div class="container mx-auto mt-32">
   <%= link_to 'Login with line', auth_at_provider_path(provider: :line) %>
+  <%= link_to 'イベント通知一覧', notifications_events_path, class: 'nav-link' %>
   <div class="flex justify-center p-2">
     <div class="inline-flex items-center bg-white leading-none text-black rounded-md p-2 shadow text-teal text-sm">
       <span class="inline-flex px-2">LINEでイベント通知を受け取る</span>

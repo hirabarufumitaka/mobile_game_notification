@@ -1,0 +1,5 @@
+<% if current_user.notification?(event) %>
+  <%= render 'unnotification', { event: event } %>
+<% else %>
+  <%= render 'notification', { event: event } %>
+<% end %>

@@ -23,9 +23,9 @@
           </div>
         </div>
         <div class="divide-y divide-gray-400 mt-10">
-          <div class="text-left py-2 text-2xl font-semibold">詳細</div>
+          <div class="text-left py-2 text-2xl font-semibold">LINE通知</div>
           <div class="text-base py-2 font-semibold ">
-            <%= @event.description %>
+            <%= render 'notification_button', event: @event  %>
           </div>
         </div>
       </div>

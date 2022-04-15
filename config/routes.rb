@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   post "oauth/callback", to: "oauths#callback"
   get "oauth/callback", to: "oauths#callback"
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
-  resources :events, only: %i[index show]
+  resources :events, only: %i[index show] do
+    collection do
+      get :notifications
+    end
+  end
+  resources :notifications, only: %i[create destroy]
 
   namespace :admin do
     root to: 'dashboards#index'

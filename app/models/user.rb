@@ -12,4 +12,16 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   enum role: { general: 0, admin: 1 }
+
+  def notification(event)
+    notification_events << event
+  end
+
+  def unnotification(event)
+    notification_events.destroy(event)
+  end
+
+  def notification?(event)
+    notification_events.include?(event)
+  end
 end

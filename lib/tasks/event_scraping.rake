@@ -66,3 +66,27 @@ namespace :line_profile do
   end
 end
 
+namespace :event_notification do
+  desc 'イベントの通知'
+  task event_notification: :environment do
+    client = Line::Bot::Client.new do |config|
+      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
+      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
+    end
+
+    notification_events = Notification.all
+    notification_events.each do |notification_event|
+      event = Event.find(notification_event.event_id)
+      game = GameApplication.find(event.game_application_id)
+      line_user = Authentication.where(user_id: notification_event.user_id)
+      line_user.each do |user|
+        message = {
+          type: 'text',
+          text: "#{game.name}\n#{event.name}\nが開催されています！\n\n通知一覧はこちら\nhttps://www.socialgame-event.com/events/notifications"
+        }
+        client.push_message(user.uid, message)
+        p "LINE通知:user_id #{user.id}に送信しました"
+      end
+    end
+  end
+end

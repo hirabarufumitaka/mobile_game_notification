@@ -29,18 +29,40 @@ namespace :event_scraping do
 end
 
 namespace :push_line do
-  desc "プッシュ通知のテスト"
+  desc 'プッシュ通知のテスト'
   task test: :environment do
     message = {
       type: 'text',
       text: 'イベントが開催されています！'
     }
     client = Line::Bot::Client.new do |config|
-      config.channel_id = ENV["LINE_CHANNEL_ID"]
-      config.channel_secret =ENV["LINE_CHANNEL_SECRET"]
-      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+      config.channel_id = ENV['LINE_CHANNEL_ID']
+      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
+      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
     end
-    response = client.push_message(ENV["LINE_USER_ID"], message)
+    response = client.push_message(ENV['LINE_USER_ID'], message)
     p response
   end
 end
+
+namespace :line_profile do
+  desc '登録ユーザーのプロフィール取得'
+  task profile: :environment do
+    client = Line::Bot::Client.new do |config|
+      config.channel_id = ENV['LINE_CHANNEL_ID']
+      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
+      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
+    end
+    response = client.get_profile(ENV['LINE_USER_ID'])
+    case response
+    when Net::HTTPSuccess
+      contact = JSON.parse(response.body)
+      p contact['displayName']
+      p contact['pictureUrl']
+      p contact['statusMessage']
+    else
+      p "#{response.code} #{response.body}"
+    end
+  end
+end
+

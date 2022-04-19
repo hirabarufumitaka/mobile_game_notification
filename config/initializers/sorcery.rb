@@ -226,8 +226,8 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-  config.line.key = ENV["LINE_KEY"]
-  config.line.secret = ENV["LINE_SECRET"]
+  config.line.key = ENV['LINE_KEY']
+  config.line.secret = ENV['LINE_SECRET']
   config.line.callback_url = 'https://www.socialgame-event.com/oauth/callback?provider=line'
   config.line.bot_prompt = 'aggressive'
 
@@ -548,7 +548,6 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `nil`
     #
     user.authentications_class = Authentication
-
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`

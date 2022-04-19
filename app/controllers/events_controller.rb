@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
   def notifications
     return if current_user.blank?
+
     @notification_events = current_user.notification_events.order(created_at: :desc)
   end
 

@@ -1,14 +1,20 @@
-<nav class="fixed w-full h-20 text-white bg-blue-900 bg-opacity-80 py-3 px-4 md:px-16 md:flex md:items-center md:justify-between">
-  <div class="flex justify-between">
-    <%= link_to(root_path, class: 'flex title-font font-medium items-center mb-4 md:mb-0 ml-3 text-xl hover:text-blue-300') do %>
+<nav class="fixed w-full text-white bg-blue-900 bg-opacity-80 px-4 md:px-16 md:flex md:items-center md:justify-between">
+  <div class="container flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <%= link_to(root_path, class: 'flex title-font font-medium items-center mb-2 md:mb-0 hover:text-blue-300') do %>
       <%= image_tag("logo.png", size: '50x50') %>
-      <span class="ml-3 text-xl">ソシャゲ情報</span>
+      <span class="ml-3 text-xl">ソシャゲイベント情報</span>
     <% end %>
     <div class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Search">
-        <path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z"/>
-      </svg>
-      <%= link_to 'イベント検索', events_path, class: "mr-5 ml-2 hover:text-blue-300"%>
+      <%= link_to(events_path, class: "flex flex-wrap items-center text-base justify-center") do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Search">
+          <path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z"/>
+        </svg>
+        <span class="mr-5 ml-2 text-sm md:text-xl hover:text-blue-300">ソシャゲ情報</span>
+      <% end %>
+      <%= link_to(notifications_events_path, class: "flex flex-wrap items-center text-base justify-center") do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Bell"><path d="M12.721 5.003L11.255 5c-3.344-.008-6.247 2.709-6.27 6v3.79c0 .79-.1 1.561-.531 2.218l-.287.438C3.73 18.11 4.2 19 4.985 19h14.03c.785 0 1.254-.89.818-1.554l-.287-.438c-.43-.657-.531-1.429-.531-2.219v-3.788c-.04-3.292-2.95-5.99-6.294-5.998z"/><path d="M15 19a3 3 0 1 1-6 0"/><path d="M12 2a2 2 0 0 1 2 2v1h-4V4a2 2 0 0 1 2-2z"/></svg>
+        <span class="mr-5 ml-2 text-sm md:text-xl hover:text-blue-300">イベント通知一覧</span>
+      <% end %>
     </div>
   </div>
 </nav>

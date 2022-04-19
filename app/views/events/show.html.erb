@@ -23,9 +23,18 @@
           </div>
         </div>
         <div class="divide-y divide-gray-400 mt-10">
-          <div class="text-left py-2 text-2xl font-semibold">詳細</div>
+          <div class="text-left py-2 text-2xl font-semibold">LINE通知</div>
           <div class="text-base py-2 font-semibold ">
-            <%= @event.description %>
+            <div class="flex flex-wrap text-xl ">
+              <% if current_user == nil %>
+                <p class="my-auto">LINEログインしてイベント通知を受け取ろう！</p>
+                <%= link_to auth_at_provider_path(provider: :line) do %>
+                  <%= image_tag 'line_login.png', size: '150x40', class: "line-login" %>
+                <% end %>
+              <% else %>
+                <%= render 'notification_button', event: @event  %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

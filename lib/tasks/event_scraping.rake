@@ -17,7 +17,6 @@ namespace :event_scraping do
         # game_application_id = 1はプロセカのID
         game_application_id: 1,
         name: event_hash['name'],
-        description: event_hash['gachaInformation']['summary'],
         event_type: 'gacha',
         # JavaScriptからRubyの時間データに変換
         started_at: Time.at(event_hash['startAt'].to_i / 1000.to_f),

@@ -1,6 +1,5 @@
 <% set_meta_tags title: 'ソシャゲイベント一覧' %>
 <div class="container mx-auto mt-32">
-  <%= link_to 'イベント通知一覧', notifications_events_path, class: 'nav-link' %>
   <section class="mx-5 mb-10">
     <%= render 'shared/search_form' %>
     <%= render @events %>

@@ -12,7 +12,6 @@ ja:
         id: 'ID'
       event:
         name: 'イベント名'
-        description: '詳細'
         event_type: 'イベント種類'
         started_at: '開始日時'
         ended_at: '終了日時'

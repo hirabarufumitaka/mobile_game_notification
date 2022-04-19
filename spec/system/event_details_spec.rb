@@ -7,7 +7,6 @@ RSpec.describe "event_details", type: :system do
       it 'イベント情報が表示されている' do
         visit event_path(event)
         expect(page).to have_content(event.name), 'イベント名が表示されていません'
-        expect(page).to have_content(event.description), '詳細が表示されていません'
       end
     end
   end

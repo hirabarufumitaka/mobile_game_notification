@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :game_application, optional: true
+  has_many :notification, dependent: :destroy
 
   enum event_type: { gacha: 0, collab: 1, others: 2 }
 

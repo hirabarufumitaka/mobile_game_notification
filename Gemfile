@@ -94,3 +94,6 @@ gem 'dotenv-rails'
 
 # aws
 gem 'fog-aws'
+
+# LINEでイベントを通知する
+gem 'line-bot-api'

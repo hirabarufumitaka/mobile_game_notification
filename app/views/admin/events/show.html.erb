@@ -41,12 +41,6 @@
           <td><%= l @event.updated_at, format: :long %></td>
         </tr>
       </table>
-      <table class="table table-bordered bg-white">
-        <tr>
-          <th scope="row"><%= Event.human_attribute_name(:description) %></th>
-          <td><%= @event&.description %></td>
-        </tr>
-      </table>
     </div>
   </div>
 </div>

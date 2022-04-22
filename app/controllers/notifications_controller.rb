@@ -1,8 +1,13 @@
 class NotificationsController < ApplicationController
   def create
     event = Event.find(params[:event_id])
-    current_user.notification(event)
-    redirect_back fallback_location: root_path
+    if event.ended_at > Time.current
+      current_user.notification(event)
+      redirect_back fallback_location: root_path
+    else
+      flash[:info] = "イベントが終了しています"
+      redirect_back fallback_location: root_path
+    end
   end
 
   def destroy

@@ -1,7 +1,9 @@
 <% set_meta_tags title: 'イベント通知一覧' %>
 <div class="container mx-auto mt-32">
   <section class="mx-5 mb-10">
-    <% if @notification_events.present? %>
+    <% if !logged_in? %>
+      <p>LINEログインしてイベント通知を確認してね！</p>
+    <% elsif @notification_events.present? %>
       <%= render @notification_events %>
     <% else %>
       <p>通知登録しているイベントがまだないよ！</p>

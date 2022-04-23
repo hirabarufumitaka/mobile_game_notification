@@ -89,3 +89,10 @@ namespace :event_notification do
     end
   end
 end
+
+namespace :notification_destroy do
+  desc 'イベントが終了していたら通知から削除'
+  task event_notification_destroy: :environment do
+    Notification.joins(:event).where('ended_at <= ?', Time.current).delete_all
+  end
+end

@@ -3,11 +3,10 @@ class NotificationsController < ApplicationController
     event = Event.find(params[:event_id])
     if event.ended_at > Time.current
       current_user.notification(event)
-      redirect_back fallback_location: root_path
     else
-      flash[:alert] = "イベントが終了しています"
-      redirect_back fallback_location: root_path
+      flash[:alert] = 'イベントが終了しています'
     end
+    redirect_back fallback_location: root_path
   end
 
   def destroy

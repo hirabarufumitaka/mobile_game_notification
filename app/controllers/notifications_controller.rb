@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
       current_user.notification(event)
       redirect_back fallback_location: root_path
     else
-      flash[:info] = "イベントが終了しています"
+      flash[:alert] = "イベントが終了しています"
       redirect_back fallback_location: root_path
     end
   end

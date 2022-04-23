@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'oauth/callback', to: 'oauths#callback'
   get 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
+  get 'login', to: 'user_sessions#new'
+  delete 'logout', to: 'user_sessions#destroy'
   resources :events, only: %i[index show] do
     collection do
       get :notifications

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @q = Event.ransack(params[:q])
-    @events = @q.result.order(started_at: :desc).page(params[:page])
+    @events = @q.result.includes(:game_application).order(started_at: :desc).page(params[:page])
   end
 
   def show; end

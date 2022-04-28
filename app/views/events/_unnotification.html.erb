@@ -1,4 +1,7 @@
-<%= link_to notification_path(current_user.notifications.find_by(event_id: event.id)), id: "js-notification-button-for-event-#{event.id}", method: :delete do %>
+<%= link_to notification_path(current_user.notifications.find_by(event_id: event.id)),
+            id: "js-notification-button-for-event-#{event.id}",
+            method: :delete,
+            remote: true do %>
   <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-80">
       LINE通知オン
   </button>

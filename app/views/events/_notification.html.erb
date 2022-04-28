@@ -1,7 +1,4 @@
-<%= link_to notifications_path(event_id: event.id),
-            id: "js-notification-button-for-event-#{event.id}",
-            method: :post,
-            remote: true do %>
+<%= link_to notifications_path(event_id: event.id), id: "js-notification-button-for-event-#{event.id}", method: :post do %>
   <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-gray-600 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80">
       LINE通知オフ
   </button>

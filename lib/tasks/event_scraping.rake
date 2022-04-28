@@ -73,18 +73,18 @@ namespace :event_notification do
       config.channel_token = ENV['LINE_CHANNEL_TOKEN']
     end
 
-    notifications = Notification.joins(:event).where('ended_at >= ?', Time.current).where('started_at <= ?', Time.current)
-    notifications.each do |notification|
-      event = notification.event
-      game = notification.event.game_application
-      user = notification.user.authentications
-      user.each do |line_user|
+    notification_events = Notification.all
+    notification_events.each do |notification_event|
+      event = Event.find(notification_event.event_id)
+      game = GameApplication.find(event.game_application_id)
+      line_user = Authentication.where(user_id: notification_event.user_id)
+      line_user.each do |user|
         message = {
           type: 'text',
           text: "#{game.name}\n#{event.name}\nが開催されています！\n\n通知一覧はこちら\nhttps://www.socialgame-event.com/events/notifications"
         }
-        client.push_message(line_user.uid, message)
-        p "LINE通知:user_id #{line_user.user.id}に送信しました"
+        client.push_message(user.uid, message)
+        p "LINE通知:user_id #{user.id}に送信しました"
       end
     end
   end

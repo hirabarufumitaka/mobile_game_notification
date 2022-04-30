@@ -29,7 +29,7 @@
 **1. イベント検索機能**
 * 複数のソシャゲイベントを一覧で表示
 * ゲームアプリの種類、イベント名、イベント種類、イベント開催期間での絞り込み検索
-![event-index](https://user-images.githubusercontent.com/90492774/165943432-072ba8f4-f5fd-471a-ac4f-b48fb75fb014.gif)
+![event-index](https://user-images.githubusercontent.com/90492774/166092496-f479a132-01c7-4f8f-b0ff-dc209d6fd98e.gif)
 
 **2. ログイン/ログアウト機能**
 * LINEログイン
@@ -39,7 +39,7 @@
 * イベントのLINE通知をオンにすると開催期間中、毎朝8時にLINE通知が届く
 * 通知登録しているイベントの一覧を確認できる
 * イベント期間が過ぎたら自動で通知がオフになる
-![event-notification](https://user-images.githubusercontent.com/90492774/165945205-ecac15c7-c0a7-4068-95fd-858e77d6db93.gif)
+![event-notification](https://user-images.githubusercontent.com/90492774/165947293-905971fc-6abf-4868-969e-b531f81e1f78.gif)
 
 # なぜこのサービスを作ったのか？
 

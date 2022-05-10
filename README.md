@@ -1,6 +1,6 @@
 # ソシャゲイベント情報
 ![ソシャゲイベント情報](https://user-images.githubusercontent.com/90492774/165933222-8dabaedc-6058-4174-8253-3d400b75ee8c.png)
-【サービスURL】https://www.socialgame-event.com/
+【サービスURL】https://socialgame-event.com/
 
 # サービス概要
 

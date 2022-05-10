@@ -81,7 +81,7 @@ namespace :event_notification do
       user.each do |line_user|
         message = {
           type: 'text',
-          text: "#{game.name}\n#{event.name}\nが開催されています！\n\n通知一覧はこちら\nhttps://www.socialgame-event.com/events/notifications"
+          text: "#{game.name}\n#{event.name}\nが開催されています！\n\n通知一覧はこちら\nhttps://socialgame-event.com/events/notifications"
         }
         client.push_message(line_user.uid, message)
         p "LINE通知:user_id #{line_user.user.id}に送信しました"

@@ -15,10 +15,10 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'ソシャゲイベント情報',
-      title: 'ソシャゲイベントをまとめて簡単に検索',
+      title: 'ソシャゲイベントをもう忘れない！',
       reverse: true,
       separator: '|',
-      description: 'ソシャゲイベント情報は複数のソシャゲのイベントをまとめて簡単に探すことができるサイトです。',
+      description: 'ソシャゲのイベントをまとめて検索・通知することが出来ます。',
       keywords: 'ソシャゲ, イベント, プロセカ',
       canonical: request.original_url,
       icon: [
@@ -27,11 +27,15 @@ module ApplicationHelper
       ],
       og: {
         site_name: 'ソシャゲイベント情報',
-        title: 'ソシャゲイベントをまとめて簡単に検索',
-        description: 'ソシャゲイベント情報は複数のソシャゲのイベントをまとめて簡単に探すことができるサイトです。',
+        title: 'ソシャゲイベントをもう忘れない！',
+        description: 'ソシャゲのイベントをまとめて検索・通知することが出来ます。',
         type: 'website',
         url: request.original_url,
-        image: image_url('logo.png')
+        image: image_url('ogp.jpg')
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@socialgameevent',
       }
     }
   end

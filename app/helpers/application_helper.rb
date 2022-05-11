@@ -35,7 +35,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@socialgameevent',
+        site: '@socialgameevent'
       }
     }
   end

@@ -229,6 +229,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.key = ENV['LINE_KEY']
   config.line.secret = ENV['LINE_SECRET']
   config.line.callback_url = 'https://socialgame-event.com/oauth/callback?provider=line'
+  config.line.scope = "profile"
   config.line.bot_prompt = 'aggressive'
 
   # For information about Discord API
